@@ -17,4 +17,16 @@ ranked_scores AS (
         ) AS rnk
     FROM best_scores
 )
+SELECT
+    event_id,
+    GROUP_CONCAT(CASE WHEN rnk = 1 THEN participant_name END 
+        ORDER BY participant_name SEPARATOR ',') AS first,
+    GROUP_CONCAT(CASE WHEN rnk = 2 THEN participant_name END 
+        ORDER BY participant_name SEPARATOR ',') AS second,
+    GROUP_CONCAT(CASE WHEN rnk = 3 THEN participant_name END 
+        ORDER BY participant_name SEPARATOR ',') AS third
+FROM ranked_scores
+WHERE rnk <= 3
+GROUP BY event_id
+ORDER BY event_id;
  
