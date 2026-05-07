@@ -11,3 +11,8 @@ UNION
 SELECT product_id , 10 AS price
 FROM Products
 WHERE product_id NOT IN
+(
+        SELECT product_id
+        FROM Products
+        WHERE change_date <= '2019-08-16'
+)
