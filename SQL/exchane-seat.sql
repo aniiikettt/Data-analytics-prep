@@ -10,3 +10,4 @@ SELECT
             id - 1
     END AS id , student
 FROM Seat
+ORDER BY id
