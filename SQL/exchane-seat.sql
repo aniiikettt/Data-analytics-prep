@@ -1,0 +1,3 @@
+SELECT
+    CASE
+        WHEN 
