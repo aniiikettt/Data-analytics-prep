@@ -6,3 +6,7 @@ ORDER BY COUNT(rating) DESC, name
 LIMIT 1)
 
 UNION ALL
+
+(SELECT title AS results
+FROM Movies
+INNER JOIN MovieRating USING(movie_id)
