@@ -13,3 +13,8 @@ SELECT visited_on ,
             ),2) AS average_amount
 FROM Customer c
 WHERE visited_on >= (
+    SELECT DATE_ADD(MIN(visited_on), INTERVAL 6 DAY)
+    FROM Customer
+)
+GROUP BY visited_on
+ORDER BY visited_on
