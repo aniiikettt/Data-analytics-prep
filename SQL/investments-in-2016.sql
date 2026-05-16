@@ -10,3 +10,5 @@ AND (lat, lon) IN (
     SELECT lat, lon
     FROM Insurance
     GROUP BY lat, lon
+    HAVING COUNT(*) = 1
+);
