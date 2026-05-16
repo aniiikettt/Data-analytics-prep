@@ -7,3 +7,6 @@ WHERE tiv_2015 IN (
      HAVING COUNT(*) > 1
 )
 AND (lat, lon) IN (
+    SELECT lat, lon
+    FROM Insurance
+    GROUP BY lat, lon
