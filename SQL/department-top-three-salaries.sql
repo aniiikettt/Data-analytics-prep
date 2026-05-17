@@ -7,3 +7,6 @@ JOIN Department d
 WHERE 3 > (
     SELECT COUNT(DISTINCT e2.salary)
     FROM Employee e2
+    WHERE e2.departmentId = d.id
+      AND e2.salary > e.salary
+);
