@@ -3,3 +3,5 @@ SELECT d.name AS Department,
        e.salary AS Salary
 FROM Employee e
 JOIN Department d 
+    ON e.departmentId = d.id
+WHERE 3 > (
